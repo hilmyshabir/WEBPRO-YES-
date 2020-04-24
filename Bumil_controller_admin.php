@@ -1,5 +1,5 @@
 <?php
-
+//tegar ganteng
 class Bumil_controller_admin extends CI_Controller
 {
     public function __construct()
