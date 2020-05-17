@@ -51,4 +51,17 @@ class Posyandu_controller_user extends CI_Controller
             $this->load->view('templates/footer');
         }
     }
+
+    public function search()
+    {
+        $keyword = $this->input->post('keyword');
+        $balita = $this->Posyandu_model->cariDataBalita($keyword);
+
+        $hasil = $this->load->view('index_balita_user', array('balita' => $balita), true);
+
+        $callback = array(
+            'hasil' => $hasil,
+        );
+        echo json_encode($callback);
+    }
 }
